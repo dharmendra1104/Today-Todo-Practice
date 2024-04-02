@@ -19,14 +19,18 @@ function addTask(text, completed) {
   // Create task item and set text
   const taskItem = document.createElement("li");
   const taskText = document.createElement("span");
+  taskText.classList.remove('line')
 
   // * For Complete Button *
   const button = document.createElement("button")
   button.innerText = `Done`
   taskItem.appendChild(button)
+  
 
   button.addEventListener('click', () => {
-    taskItem.classList.add('completed')
+    taskText.classList.add('line')
+    console.log('hhjsd');
+    // buttondel.style.textDecoration='none'
   })
 
   

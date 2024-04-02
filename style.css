@@ -70,6 +70,9 @@ body {
     text-decoration: line-through;
     color: black;
   }
+  .line{
+    text-decoration: line-through;
+  }
   
   /* Styling for task buttons */
   #task-list button {
@@ -92,6 +95,7 @@ body {
   }
   
   #task-list button:nth-child(2) {
+    /* text-decoration: none; */
     background-color: red;
     color: #fff;
   }

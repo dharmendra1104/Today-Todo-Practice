@@ -41,7 +41,7 @@
         <option value="green"><span id="green">Green</span></option>
         <option value="cyan"><span id="cyan">Cyan</span></option>
     </select>
-    <div class="percentage"></div>
+    <div class="percentage">1%</div>
     <script>
       // Create some content
       document.body.appendChild(
@@ -63,9 +63,9 @@
 
 
 
-        let percentag=((pageYOffset / max) * 100).toFixed(3)
+        // let percentag=((pageYOffset / max) * 100).toFixed()
         // console.log(percentage);
-        percentage.innerHTML=percentag
+        percentage.innerHTML=`${((pageYOffset / max) * 100).toFixed()}%`
       });
 
 
