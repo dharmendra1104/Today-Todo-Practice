@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      #progress {
+        border-bottom: 2px solid blue;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .percentage{
+        position: fixed;
+        right: 0;
+        height: 50px;
+        width: 100px;
+        background-color: antiquewhite;
+      }
+      #select{
+        position: fixed;
+      }
+      #red{
+       border-bottom: red;
+      }
+      #green{
+        border-bottom: green;
+      }
+      #cyan{
+        border-bottom: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress"></div>
+    <select name="color" id="select">
+        <option value="red"><span id="red">Red</span></option>
+        <option value="green"><span id="green">Green</span></option>
+        <option value="cyan"><span id="cyan">Cyan</span></option>
+    </select>
+    <div class="percentage"></div>
+    <script>
+      // Create some content
+      document.body.appendChild(
+        document.createTextNode(
+          "supercalifragilisticexpialidocious ".repeat(1000)
+        )
+      );
+      let percentage=document.querySelector('.percentage')
+      let bar = document.querySelector("#progress");
+      window.addEventListener("scroll", () => {
+        let max = document.body.scrollHeight - innerHeight;
+        bar.style.width = `${(pageYOffset / max) * 100}%`;
+
+        progress.addEventListener('click',()=>{
+        let max = document.body.scrollHeight - innerHeight;
+        bar.style.width = `${(pageYOffset / max)+max}%`;
+            console.log("hello");
+       })
+
+
+
+        let percentag=((pageYOffset / max) * 100).toFixed(3)
+        // console.log(percentage);
+        percentage.innerHTML=percentag
+      });
+
+
+      select.addEventListener('change',()=>{
+        let value=select.value
+        bar.style.borderBottomColor=value
+      })
+
+
+    </script>
+  </body>
+</html>
